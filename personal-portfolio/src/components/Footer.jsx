@@ -1,11 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { MailchimpForm } from "./MailchimpForm";
+import MailchimpForm from "./MailchimpForm"; // make sure MailchimpForm is also default export
 import logo from "../assets/img/logo.svg";
+import React from "react";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="footer">
       <Container>
@@ -27,3 +28,5 @@ export const Footer = () => {
     </footer>
   )
 }
+
+export default Footer;
