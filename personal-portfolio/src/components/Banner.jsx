@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/Abdalsalam-removebg-preview.png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -12,7 +12,7 @@ const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
 
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+  const toRotate = ["Full-Stack Developer", "Team Player","Problem Solver"];
   const period = 2000;
 
   useEffect(() => {
@@ -64,21 +64,20 @@ const Banner = () => {
                       : ""
                   }
                 >
-                  <span className="tagline">Welcome to my Portfolio</span>
+                  <span className="tagline">Welcome! Explore My Work</span>
 
                   <h1>
-                    {`Hi! I'm Judy`}{" "}
+                    {`Hi! I'm Abdalsalam Abakar`}{" "}
                     <span className="txt-rotate">
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
 
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    I am a full-stack developer passionate about building web applications.
+                    I work with technologies like JavaScript, React, Node.js, and databases.
+                    I enjoy solving problems and creating efficient, user-friendly solutions.
+                    I focus on turning ideas into functional and scalable software.
                   </p>
 
                   <button onClick={() => console.log("connect")}>
