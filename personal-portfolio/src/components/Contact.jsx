@@ -1,10 +1,10 @@
 import { useState } from "react";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   const formInitialDetails = {
@@ -23,23 +23,18 @@ const Contact = () => {
     setFormDetails({ ...formDetails, [category]: value });
   };
 
-  // EmailJS credentials from .env
   const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID; // template_kbhdcvf
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID;
   const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Simple validation
     if (!formDetails.firstName || !formDetails.lastName || !formDetails.email.includes("@") || !formDetails.message) {
       setStatus({ success: false, message: "Please fill in all required fields." });
       return;
     }
 
     setButtonText("Sending...");
-
-    // Pass each field individually to match template variables
     const templateParams = {
       firstName: formDetails.firstName,
       lastName: formDetails.lastName,
@@ -51,14 +46,12 @@ const Contact = () => {
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
           setStatus({ success: true, message: "Message sent successfully!" });
           setFormDetails(formInitialDetails);
           setButtonText("Send");
-          setTimeout(() => setStatus({}), 5000); // auto-clear
+          setTimeout(() => setStatus({}), 5000);
         },
         (err) => {
-          console.error("FAILED...", err);
           setStatus({ success: false, message: "Oops! Something went wrong. Please try again." });
           setButtonText("Send");
         }
@@ -69,21 +62,46 @@ const Contact = () => {
     <section className="contact" id="connect">
       <Container>
         <Row className="align-items-center">
+
+          {/* Contact Methods Section */}
           <Col size={12} md={6}>
             <TrackVisibility>
-              {({ isVisible }) =>
-                <img
-                  className={isVisible ? "animate__animated animate__zoomIn" : ""}
-                  src={contactImg}
-                  alt="Contact Us"
-                />
-              }
+              {({ isVisible }) => (
+                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                  <h2>Contact Me Directly</h2>
+                  <p>Connect with me through GitHub, LinkedIn, email, phone , or even WhatsApp. I’d love to hear from you!</p>
+                  <div className="contact-icons" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', fontSize: '1.8rem' }}>
+                    <a href="https://github.com/AbdalsalamAbakar" target="_blank" rel="noopener noreferrer" title="GitHub">
+                      <FaGithub />
+                    </a>
+                    <a href="https://www.linkedin.com/in/abdalsalam-abakar-907356370/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                      <FaLinkedin />
+                    </a>
+                    <a href="mailto:abakarabdalsalam@gmail.com" title="Email">
+                      <FaEnvelope />
+                    </a>
+                    <a href="tel:+250732520169" title="Phone">
+                      <FaPhone />
+                    </a>
+                    <a
+                      href="https://wa.me/+250732520169"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="WhatsApp"
+                    >
+                      <FaWhatsapp />
+                    </a>
+
+                  </div>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
 
+          {/* Contact Form Section */}
           <Col size={12} md={6}>
             <TrackVisibility>
-              {({ isVisible }) =>
+              {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>Get In Touch</h2>
                   <form onSubmit={handleSubmit}>
@@ -145,7 +163,7 @@ const Contact = () => {
                     </Row>
                   </form>
                 </div>
-              }
+              )}
             </TrackVisibility>
           </Col>
         </Row>

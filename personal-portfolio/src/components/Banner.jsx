@@ -12,7 +12,7 @@ const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
 
-  const toRotate = ["Full-Stack Developer", "Team Player","Problem Solver"];
+  const toRotate = ["Full-Stack Developer", "Team Player", "Problem Solver"];
   const period = 2000;
 
   useEffect(() => {
@@ -50,6 +50,14 @@ const Banner = () => {
     }
   };
 
+  // Smooth scroll function
+  const handleConnectClick = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="banner" id="home">
       <Container>
@@ -60,27 +68,30 @@ const Banner = () => {
                 <div
                   className={
                     isVisible
-                      ? "animate__animated animate__fadeIn"
-                      : ""
+                      ? "animate__animated animate__fadeInLeft banner-content"
+                      : "banner-content"
                   }
                 >
-                  <span className="tagline">Welcome! Explore My Work</span>
+                  <span className="tagline animate-item">
+                    Welcome! Explore My Work
+                  </span>
 
-                  <h1>
+                  <h1 className="animate-item">
                     {`Hi! I'm Abdalsalam Abakar`}{" "}
                     <span className="txt-rotate">
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
 
-                  <p>
-                    I am a full-stack developer passionate about building web applications.
-                    I work with technologies like JavaScript, React, Node.js, and databases.
-                    I enjoy solving problems and creating efficient, user-friendly solutions.
-                    I focus on turning ideas into functional and scalable software.
+                  <p className="animate-item">
+                    I am a full-stack developer passionate about building web
+                    applications. I work with technologies like JavaScript,
+                    React, Node.js, and databases. I enjoy solving problems and
+                    creating efficient, user-friendly solutions. I focus on
+                    turning ideas into functional and scalable software.
                   </p>
 
-                  <button onClick={() => console.log("connect")}>
+                  <button onClick={handleConnectClick} className="animate-item">
                     Let’s Connect <ArrowRightCircle size={25} />
                   </button>
                 </div>
@@ -94,8 +105,8 @@ const Banner = () => {
                 <div
                   className={
                     isVisible
-                      ? "animate__animated animate__zoomIn"
-                      : ""
+                      ? "animate__animated animate__zoomIn header-img"
+                      : "header-img"
                   }
                 >
                   <img src={headerImg} alt="Header Img" />

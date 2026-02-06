@@ -7,9 +7,9 @@ const Newsletter = () => {
   const [message, setMessage] = useState("");
 
   // ===== EmailJS credentials =====
-  const SERVICE_ID = "service_alah2eo";      // Your EmailJS Service ID
-  const TEMPLATE_ID = "template_z40saen";   // Your EmailJS Template ID
-  const PUBLIC_KEY = "VBtNJ04NuLR9pza9a";   // Your EmailJS Public Key
+  const SERVICE_ID = "service_alah2eo";
+  const TEMPLATE_ID = "template_z40saen";
+  const PUBLIC_KEY = "VBtNJ04NuLR9pza9a";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,67 +23,76 @@ const Newsletter = () => {
     setStatus("sending");
     setMessage("");
 
-    // ===== Template parameters =====
-    // Must match placeholders in your template (adjust if your template has different fields)
     const templateParams = {
-      user_email: email,          // matches {{user_email}} in your template
-      from_name: "Portfolio Site", // optional, if template has {{from_name}}
-      to_name: "Abdalsalam"        // optional, if template has {{to_name}}
+      user_email: email,
+      from_name: "Portfolio Site",
+      to_name: "Abdalsalam",
     };
 
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+        () => {
           setStatus("success");
           setMessage("Thank you for subscribing!");
-          setEmail(""); // reset input
+          setEmail(""); // Clear input
+
+          // Optional: reset status after a few seconds
+          setTimeout(() => {
+            setStatus("");
+            setMessage("");
+          }, 5000);
         },
-        (err) => {
-          console.error("FAILED...", err);
+        () => {
           setStatus("error");
-          setMessage("Oops! Something went wrong. Please try again.");
+          setMessage("Something went wrong. Please try again.");
         }
       );
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-4 bg-white shadow-md rounded-md">
-      <h2 className="text-xl font-semibold mb-3 text-center">
-        Subscribe to our Newsletter
-      </h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input
-          type="email"
-          placeholder="Your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-        <button
-          type="submit"
-          className={`p-3 rounded-md text-black-50 font-semibold transition ${
-            status === "sending"
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700"
-          }`}
-          disabled={status === "sending"}
-        >
-          {status === "sending" ? "Sending..." : "Subscribe"}
-        </button>
-      </form>
-
-      {message && (
-        <p
-          className={`mt-3 text-center ${
-            status === "success" ? "text-green-600" : "text-red-600"
-          }`}
-        >
-          {message}
+    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-gray-100">
+      <div className="w-full max-w-md p-8 bg-black shadow-xl rounded-xl border border-gray-200 text-center">
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">
+          Stay Updated!
+        </h2>
+        <p className="text-gray-600 mb-6">
+          Subscribe to our newsletter to receive the latest updates and news.
         </p>
-      )}
+
+        <form onSubmit={handleSubmit} className="w-full flex flex-col items-center mt-2">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-center"
+            required
+          />
+
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className={`w-full p-3 rounded-lg text-white font-semibold transition ${
+              status === "sending"
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+            }`}
+          >
+            {status === "sending" ? "Sending..." : "Subscribe"}
+          </button>
+        </form>
+
+        {message && (
+          <p
+            className={`mt-4 font-medium ${
+              status === "success" ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {message}
+          </p>
+        )}
+      </div>
     </div>
   );
 };
