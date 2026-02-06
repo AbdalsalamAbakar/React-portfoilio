@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Newsletter from "./components/Newsletter";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 function App() {
   return (
@@ -18,13 +19,18 @@ function App() {
 
       <Banner />
 
+      <About />
+
       <Skills />
 
       <Projects />
 
       <Newsletter />
 
-      <Contact />
+      {/* Add an id to the Contact section for scrolling */}
+      <div id="contact">
+        <Contact />
+      </div>
 
       <Footer />
     </div>
@@ -32,4 +38,3 @@ function App() {
 }
 
 export default App;
-
