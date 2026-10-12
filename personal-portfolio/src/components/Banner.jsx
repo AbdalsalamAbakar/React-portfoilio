@@ -12,7 +12,7 @@ const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
 
-  const toRotate = ["Full-Stack Developer", "Team Player", "Problem Solver"];
+  const toRotate = ["Full-Stack", "Team Player", "Problem Solver"];
   const period = 2000;
 
   useEffect(() => {
@@ -77,18 +77,15 @@ const Banner = () => {
                   </span>
 
                   <h1 className="animate-item">
-                    {`Hi! I'm Abdalsalam Abakar`}{" "}
+                    {`Hi! I'm Abdalsalam `}{" "}
                     <span className="txt-rotate">
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
 
                   <p className="animate-item">
-                    I am a full-stack developer passionate about building web
-                    applications. I work with technologies like JavaScript,
-                    React, Node.js, and databases. I enjoy solving problems and
-                    creating efficient, user-friendly solutions. I focus on
-                    turning ideas into functional and scalable software.
+                    I’m a full-stack developer focused on building scalable, user-friendly web applications. I work with JavaScript, React, Node.js, and databases to turn ideas into efficient, practical software solutions.
+
                   </p>
 
                   <button onClick={handleConnectClick} className="animate-item">

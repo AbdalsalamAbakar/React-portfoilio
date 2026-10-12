@@ -1,23 +1,32 @@
 import React from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import ProjectCard from "./ProjectCard"; // default import
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg1 from "../assets/img/authentication.png";
+import projImg2 from "../assets/img/weather-forcast.png";
+import projImg3 from "../assets/img/daily-puls.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 const Projects = () => {
 
-  const projects = [
-    { title: "Business Startup", description: "Design & Development", imgUrl: projImg1 },
-    { title: "Business Startup", description: "Design & Development", imgUrl: projImg2 },
-    { title: "Business Startup", description: "Design & Development", imgUrl: projImg3 },
-    { title: "Business Startup", description: "Design & Development", imgUrl: projImg1 },
-    { title: "Business Startup", description: "Design & Development", imgUrl: projImg2 },
-    { title: "Business Startup", description: "Design & Development", imgUrl: projImg3 },
-  ];
+const projects = [
+  {
+    title: "Authentication System",
+    description: "React & Node.js",
+    imgUrl: projImg1
+  },
+  {
+    title: "Weather App",
+    description: "React & Weather API",
+    imgUrl: projImg2
+  },
+  {
+    title: "Daily News Web",
+    description: "React & JavaScript",
+    imgUrl: projImg3
+  },
+];
 
   return (
     <section className="project" id="projects">
@@ -28,7 +37,7 @@ const Projects = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>Projects</h2>
-                  <p>Dive into my projects to see real-world applications of my skills. Each project highlights problem-solving, creativity, and technical expertise. Explore and discover how I turn ideas into functional solutions.</p>
+                  <p>Explore my projects and see my work in action.</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item><Nav.Link eventKey="first">Tab 1</Nav.Link></Nav.Item>
@@ -44,10 +53,12 @@ const Projects = () => {
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                        <p>More exciting projects are currently in development. Stay tuned for new ideas, practical solutions, and innovative work coming soon.
+</p>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                        <p>New projects are currently in development. Check back soon to explore more of my work.
+</p>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>

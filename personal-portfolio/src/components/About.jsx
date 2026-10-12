@@ -41,16 +41,11 @@ const About = () => {
                 </h2>
 
                 <p className="animate-item">
-                  I’m Abdalsalam Abakar, a full-stack developer passionate about
-                  building modern, scalable, and user-focused web applications.
-                  I enjoy turning ideas into clean, efficient, and reliable
-                  digital solutions.
+                 I’m Abdalsalam Abakar, a full-stack developer passionate about building  modern, scalable, and user-focused web applications.
                 </p>
 
                 <p className="animate-item">
-                  I work with JavaScript, React, Node.js, and databases, focusing
-                  on maintainable code, smooth user experiences, and continuous
-                  learning to keep up with modern web technologies.
+                I work with JavaScript, React, Node.js, and databases, creating clean, reliable  solutions while continuously improving my skills.
                 </p>
 
                 <div className="about-stats">
@@ -59,7 +54,7 @@ const About = () => {
                     <span>Years Learning</span>
                   </div>
                   <div className="stat animate-item">
-                    <h3>10+</h3>
+                    <h3>3+</h3>
                     <span>Projects</span>
                   </div>
                   <div className="stat animate-item">
