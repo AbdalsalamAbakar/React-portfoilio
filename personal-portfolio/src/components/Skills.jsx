@@ -23,6 +23,7 @@ const Skills = () => {
     { name: "Node.js", icon: meter1 },
     { name: "Express.js", icon: meter1 },
     { name: "MongoDB", icon: meter1 },
+    { name: "SQL & DBs", icon: meter1 },
   ];
 
   const softSkills = [
@@ -48,7 +49,7 @@ const Skills = () => {
     width: "100px",
     height: "100px",
     borderRadius: "50%",
-    background: "linear-gradient(135deg, #e0f7fa, #b2ebf2)", // subtle soft blue gradient
+    background: "linear-gradient(135deg, #2a2d2e, #b2ebf2)", // subtle soft blue gradient
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -116,7 +117,7 @@ const Skills = () => {
                         ...iconCircleStyle,
                         width: "90px",
                         height: "90px",
-                        background: "linear-gradient(135deg, #fce4ec, #f8bbd0)", // soft pink gradient for soft skills
+                        background: "linear-gradient(135deg, #2a2d2e, #f8bbd0)", // soft pink gradient for soft skills
                         border: "2px solid #f8bbd0",
                       }}
                       className="skill-icon"
