@@ -328,6 +328,7 @@ body {
 
   .about-image {
     order: 1;
+
   }
 
   .about-text {
@@ -346,6 +347,7 @@ body {
 
   .about-image img {
     width: min(80vw, 380px);
+
   }
 }
 
@@ -373,9 +375,10 @@ body {
   .about-badge {
     padding: 7px 14px;
 
-    font-size: 12px;
+    font-size: 30px;
 
     margin-bottom: 18px;
+    font-weight: 600;
   }
 
   .about-title {
