@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCard"; // default import
 import projImg1 from "../assets/img/authentication.png";
 import projImg2 from "../assets/img/weather-forcast.png";
 import projImg3 from "../assets/img/daily-puls.png";
+import projImg4 from "../assets/img/savings tracker.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -25,6 +26,11 @@ const projects = [
     title: "Daily News Web",
     description: "React & JavaScript",
     imgUrl: projImg3
+  },
+    {
+    title: "Savings Tracker/System",
+    description: "React & JavaScript",
+    imgUrl: projImg4
   },
 ];
 
