@@ -7,7 +7,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  /* scroll-padding-top: 70px; */
 }
 
 body {
@@ -27,7 +27,7 @@ body {
   display: flex;
   align-items: center;
   padding: 70px 5.5%;
-  scroll-margin-top: 0;
+  scroll-margin-top: 0px;
   overflow: hidden;
 }
 
@@ -57,7 +57,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 22px;
+  margin-top: 18px;
 }
 
 .about-image::before {
@@ -121,9 +121,9 @@ body {
 .about-badge {
   display: inline-flex;
   align-items: center;
-/* 
-  padding: 10px 16px; */
-  margin-bottom: 29px;
+
+  margin-bottom: 15px;
+
 
   /* border: 1px solid rgba(182, 0, 255, 0.25);
   border-radius: 7px; */
