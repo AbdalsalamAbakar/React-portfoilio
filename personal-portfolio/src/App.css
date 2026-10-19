@@ -1009,11 +1009,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"]
   position: relative;
   display: block;
 
-  width: min(100%, 480px);
+  width: min(100%, 370px);
   height: auto;
-  /* max-height: 440px; */
+  max-height: 440px;
 
-  margin: 0 auto;
+  margin: 60px 89px;
   border-radius: 20px;
   object-fit: contain;
 
@@ -1026,6 +1026,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"]
   filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.35));
   will-change: transform;
 }
+
+
 
 /* =========================================================
    IMAGE GLOW
@@ -1321,7 +1323,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"]
   position: relative;
   padding: 110px 5.5% 100px;
   overflow: hidden;
- 
+  
+
 }
 
 /* Main Skills Container */
