@@ -1235,6 +1235,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"]
   .banner img {
     width: min(90%, 300px);
     margin-top: 35px;
+
+   
   }
 }
 
@@ -1263,6 +1265,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"]
   .banner img {
     width: 92%;
     max-width: 260px;
+      margin: 25px 25px;
+    
   }
 }
 
